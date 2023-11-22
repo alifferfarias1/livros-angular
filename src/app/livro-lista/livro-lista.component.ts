@@ -1,16 +1,17 @@
+// livro-lista.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ControleEditoraService } from '../controle-editora.service';
 import { ControleLivrosService } from '../controle-livros.service';
-import { Editora } from '../editora'; // Importe a classe Editora
-import { Livro } from '../livro'; // Importe a classe Livro
+import { Livro } from '../livro';
+import { Editora } from '../editora';
 
 @Component({
   selector: 'app-livro-lista',
   templateUrl: './livro-lista.component.html',
 })
 export class LivroListaComponent implements OnInit {
-  editoras: Editora[] = []; // Defina o tipo explicitamente como Editora[]
-  livros: Livro[] = []; // Defina o tipo explicitamente como Livro[]
+  editoras: Array<Editora> = [];
+  livros: Array<Livro> = [];
 
   constructor(private servEditora: ControleEditoraService, private servLivros: ControleLivrosService) {}
 

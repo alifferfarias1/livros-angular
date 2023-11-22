@@ -1,22 +1,18 @@
+// controle-livros.service.ts
 import { Injectable } from '@angular/core';
 import { Livro } from './livro';
-
-@Injectable({
-  providedIn: 'root'
-})
-// controle-livros.service.ts
 
 @Injectable({
   providedIn: 'root',
 })
 export class ControleLivrosService {
-  livros: Livro[] = [
-    new Livro(1, 1, 'Livro 1', 'Resumo do Livro 1', ['Autor 1']),
-    new Livro(2, 2, 'Livro 2', 'Resumo do Livro 2', ['Autor 2']),
-    new Livro(3, 3, 'Livro 3', 'Resumo do Livro 3', ['Autor 3']),
+  livros: Array<Livro> = [
+    new Livro(1, 1, 'Livro 1', 'Resumo do Livro 1', ['Autor 1', 'Autor 2']),
+    new Livro(2, 2, 'Livro 2', 'Resumo do Livro 2', ['Autor 3', 'Autor 4']),
+    new Livro(3, 3, 'Livro 3', 'Resumo do Livro 3', ['Autor 5']),
   ];
 
-  obterLivros(): Livro[] {
+  obterLivros(): Array<Livro> {
     return this.livros;
   }
 
