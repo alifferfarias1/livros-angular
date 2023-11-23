@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { LivroListaComponent } from './livro-lista/livro-lista.component';
@@ -13,6 +15,7 @@ import { ControleLivrosService } from './controle-livros.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule
   ],
   providers: [ControleEditoraService, ControleLivrosService],
   bootstrap: [AppComponent],
