@@ -1,20 +1,19 @@
-<!-- livro-lista.component.html -->
-<main class="container mt-3">
+<main class="container mt-4">
   <h2>Livros</h2>
   <table class="table">
     <thead>
       <tr>
-        <th>Código</th>
-        <th>Título</th>
-        <th>Resumo</th>
-        <th>Autores</th>
-        <th>Editora</th>
-        <th>Ações</th>
+        <th scope="col">#</th>
+        <th scope="col">Título</th>
+        <th scope="col">Resumo</th>
+        <th scope="col">Autores</th>
+        <th scope="col">Editora</th>
+        <th scope="col">Ações</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let livro of livros">
-        <td>{{ livro.codigo }}</td>
+        <th scope="row">{{ livro.codigo }}</th>
         <td>{{ livro.titulo }}</td>
         <td>{{ livro.resumo }}</td>
         <td>

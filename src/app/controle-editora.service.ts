@@ -1,4 +1,3 @@
-// controle-editora.service.ts
 import { Injectable } from '@angular/core';
 import { Editora } from './editora';
 
@@ -6,18 +5,18 @@ import { Editora } from './editora';
   providedIn: 'root',
 })
 export class ControleEditoraService {
-  editoras: Array<Editora> = [
-    new Editora(1, 'Editora A'),
-    new Editora(2, 'Editora B'),
-    new Editora(3, 'Editora C'),
+  private editoras: Editora[] = [
+    { codEditora: 1, nome: 'Editora A' },
+    { codEditora: 2, nome: 'Editora B' },
+    { codEditora: 3, nome: 'Editora C' },
   ];
 
-  getEditoras(): Array<Editora> {
+  getEditoras(): Editora[] {
     return this.editoras;
   }
 
   getNomeEditora(codEditora: number): string {
     const editora = this.editoras.find(e => e.codEditora === codEditora);
-    return editora ? editora.nome : '';
+    return editora ? editora.nome : 'Editora não encontrada';
   }
 }

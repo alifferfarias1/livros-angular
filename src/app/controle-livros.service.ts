@@ -1,4 +1,3 @@
-// controle-livros.service.ts
 import { Injectable } from '@angular/core';
 import { Livro } from './livro';
 
@@ -6,18 +5,18 @@ import { Livro } from './livro';
   providedIn: 'root',
 })
 export class ControleLivrosService {
-  livros: Array<Livro> = [
-    new Livro(1, 1, 'Livro 1', 'Resumo do Livro 1', ['Autor 1', 'Autor 2']),
-    new Livro(2, 2, 'Livro 2', 'Resumo do Livro 2', ['Autor 3', 'Autor 4']),
-    new Livro(3, 3, 'Livro 3', 'Resumo do Livro 3', ['Autor 5']),
+  private livros: Livro[] = [
+    { codigo: 1, codEditora: 1, titulo: 'Livro 1', resumo: 'Resumo do Livro 1', autores: ['Autor 1', 'Autor 2'] },
+    { codigo: 2, codEditora: 2, titulo: 'Livro 2', resumo: 'Resumo do Livro 2', autores: ['Autor 3', 'Autor 4'] },
+    { codigo: 3, codEditora: 3, titulo: 'Livro 3', resumo: 'Resumo do Livro 3', autores: ['Autor 5', 'Autor 6'] },
   ];
 
-  obterLivros(): Array<Livro> {
+  obterLivros(): Livro[] {
     return this.livros;
   }
 
   incluir(livro: Livro): void {
-    livro.codigo = Math.max(...this.livros.map(l => l.codigo), 0) + 1;
+    livro.codigo = this.livros.length + 1;
     this.livros.push(livro);
   }
 

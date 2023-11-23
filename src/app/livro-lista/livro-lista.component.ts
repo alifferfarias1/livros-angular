@@ -1,17 +1,17 @@
-// livro-lista.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ControleEditoraService } from '../controle-editora.service';
 import { ControleLivrosService } from '../controle-livros.service';
-import { Livro } from '../livro';
 import { Editora } from '../editora';
+import { Livro } from '../livro';
 
 @Component({
   selector: 'app-livro-lista',
   templateUrl: './livro-lista.component.html',
+  styleUrls: ['./livro-lista.component.css'],
 })
 export class LivroListaComponent implements OnInit {
-  editoras: Array<Editora> = [];
-  livros: Array<Livro> = [];
+  editoras: Editora[] = [];
+  livros: Livro[] = [];
 
   constructor(private servEditora: ControleEditoraService, private servLivros: ControleLivrosService) {}
 
